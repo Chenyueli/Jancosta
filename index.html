@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Welcome</title>
+		<style></style>
+		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<div>
+			<header class="">
+				<h2>Jancosta</h2>
+				<div class="nav">
+					<ul>
+						<li>Home</li>
+						<li>About</li>
+						<li>VIP</li>
+						<li>Products</li>
+						<li>Contact</li>
+						<li>Register</li>
+					</ul>
+				</div>
+			</header>
+			<div></div>
+			<div class="container">
+				<section>
+					<div class="slide-wrapper">
+						<div class="slide">
+							<div class="slide-description">
+								<h1>JOIN THE VIP CLUB</h1>
+								<h4>Discounts,Prizes and More!</h4>
+								<p>Thank you for visiting Jancosta! We are greatly honored to provide quality product as creative and reliable as you! Jancosta has started as a family business (C&D wholesale) since 2008. Through nearly a decade of serving as a bridge between products and consumer, we finally decided to brand our own products online in Aug 2014. Our mission is to offer best quality products and best customer service for our buyers. At Jancosta, we are committed to build a long-term relationship with our customers. If you are interest in knowing more about Jancosta or our products, please move on to explore more on our website or contact us. （加超链接www.jancosta.com/contact)</p>
+							</div>
+							<div class="col-6"><img src="images/vip-300x300.jpg" /></div>
+						</div>
+						<div class="slide">
+							<div class="slide-description">
+								<h1>JOIN THE VIP CLUB</h1>
+								<h4>Discounts,Prizes and More!</h4>
+								<p>Thank you for visiting Jancosta! We are greatly honored to provide quality product as creative and reliable as you! Jancosta has started as a family business (C&D wholesale) since 2008. Through nearly a decade of serving as a bridge between products and consumer, we finally decided to brand our own products online in Aug 2014. Our mission is to offer best quality products and best customer service for our buyers. At Jancosta, we are committed to build a long-term relationship with our customers. If you are interest in knowing more about Jancosta or our products, please move on to explore more on our website or contact us. （加超链接www.jancosta.com/contact)</p>
+							</div>
+							<div class="col-6"><img src="images/vip-300x300.jpg" /></div>
+						</div>
+					</div>
+				</section>
+				<section class="middle-panel">
+					<div class="mid-col">
+						<i class="fa fa-home" aria-hidden="true"></i>
+						<h3>About Jancosta</h3>
+						<p>Wundermax delivers superior products to its customers and ensures every customer have happy purchase from us.</p>
+					</div>
+					<div class="mid-col">
+						<i class="fa fa-diamond" aria-hidden="true"></i>
+						<h3>PRODUCT OF THE MONTH</h3>
+						<p>Wundermax launches its innovative door stoppers. It works on all floor surface and securely wedges heavy door at ease.</p>
+
+					</div>
+					<div class="mid-col">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+						<h3>CONTACT US</h3>
+						<p>If you have any questions about our company, our products, or an order you placed, please contact us. We’d love to hear from you!</p>
+					</div>
+				</section>
+			</div>
+
+			<footer class="hidden">
+				<div class="in-footer">
+					<h2>Join Wundermax Vip Club</h2>
+					<span>Sign Up Wundermax VIP Exclusive Program, get discounts and win a $50 Amazon Gift Card!
+				</span>
+					<a>View More</a>
+				</div>
+			</footer>
+		</div>
+
+		<script src="js/jquery-3.1.1.js"></script>
+		<script>
+			(function() {
+				console.log(document.body.offsetWidth);
+				var moveWidth = document.body.offsetWidth;
+
+				var curIndex = 0, //当前index
+					imgLen = $(".slide").length; //图片总数
+				// 定时器自动变换2.5秒每次
+				var autoChange = setInterval(function() {
+					if(curIndex < imgLen - 1) {
+						curIndex++;
+					} else {
+						curIndex = 0;
+					}
+					//调用变换处理函数
+					changeTo(curIndex);
+				}, 2500);
+
+				function changeTo(num) {
+					var goLeft = num * moveWidth;
+					$(".slide-wrapper").animate({
+						left: "-" + goLeft + "px"
+					}, 500);
+//					$(".infoList").find("li").removeClass("infoOn").eq(num).addClass("infoOn");
+//					$(".indexList").find("li").removeClass("indexOn").eq(num).addClass("indexOn");
+				}
+			})();
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,94 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.tb {
+  border: 1px solid red;
+}
+.wc {
+  color: #fff;
+}
+body {
+  font-family: "微软雅黑";
+}
+header {
+  height: 120px;
+  background-color: #2f2f2f;
+  color: #fff;
+  line-height: 120px;
+  border: 1px solid red;
+}
+header h2 {
+  float: left;
+}
+header .nav {
+  float: right;
+}
+header li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.slide-wrapper {
+  position: relative;
+  width: 200%;
+}
+.slide {
+  float: left;
+  display: inline;
+  padding: 10px 40px;
+  width: 50%;
+}
+.slide .slide-description {
+  flex: 2;
+}
+.slide .col-6 {
+  flex: 1;
+}
+.middle-panel {
+  display: flex;
+  padding: 60px;
+  text-align: center;
+}
+.middle-panel .mid-col {
+  padding: 20px 10px;
+}
+.middle-panel .fa {
+  font-size: 50px;
+  color: #29a58b;
+  margin-bottom: 16px;
+}
+.middle-panel p {
+  margin-top: 16px;
+  color: #474747;
+  font-size: 12px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #29a58b;
+  color: #fff;
+  line-height: 40px;
+  padding: 50px;
+}
+footer a {
+  float: right;
+  padding: 16px 20px;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.in-footer {
+  position: relative;
+}
+.hidden {
+  display: none;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
