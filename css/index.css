@@ -14,6 +14,10 @@ body {
   font-family: "微软雅黑";
 }
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
   height: 120px;
   background-color: #2f2f2f;
   color: #fff;
@@ -22,47 +26,179 @@ header {
 }
 header h2 {
   float: left;
+  margin-left: 40px;
 }
 header .nav {
   float: right;
+  margin-right: 10px;
 }
 header li {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 30px;
 }
-.slide-wrapper {
+header .active {
+  color: #29A58B;
+}
+.container {
+  margin-top: 120px;
+}
+#about,
+#vip,
+#products,
+#contact {
+  border: 1px solid red;
+}
+#home .slide-wrapper {
   position: relative;
   width: 200%;
 }
-.slide {
+#home .slider {
+  padding: 80px;
   float: left;
-  display: inline;
-  padding: 10px 40px;
   width: 50%;
+  display: flex;
 }
-.slide .slide-description {
-  flex: 2;
+#home .slider * {
+  border: 1px solid red;
 }
-.slide .col-6 {
-  flex: 1;
+#home .slider .introduction {
+  flex: 4;
 }
-.middle-panel {
+#home .slider .img-wrapper {
+  flex: 3;
+  text-align: center;
+  align-self: center;
+}
+#home .middle-panel {
   display: flex;
   padding: 60px;
   text-align: center;
 }
-.middle-panel .mid-col {
+#home .middle-panel .mid-col {
   padding: 20px 10px;
 }
-.middle-panel .fa {
+#home .middle-panel .fa {
   font-size: 50px;
   color: #29a58b;
   margin-bottom: 16px;
 }
-.middle-panel p {
+#home .middle-panel p {
   margin-top: 16px;
   color: #474747;
   font-size: 12px;
+}
+#about {
+  color: #959595;
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
+}
+#about h1 {
+  font-size: 40px;
+  color: #252525;
+}
+#about h4 {
+  color: #898989;
+  margin: 5px 0 10px;
+}
+#about p {
+  font-size: 14px;
+  line-height: 2;
+  margin-top: 20px;
+}
+#about .img-wrapper {
+  align-items: center;
+  border: 1px solid red;
+}
+#about .text-wrapper {
+  padding: 50px;
+}
+#vip {
+  color: #959595;
+}
+#vip h2 {
+  text-align: center;
+}
+#vip .vip-wrapper {
+  display: flex;
+  align-items: center;
+  height: 400px;
+}
+#vip .introduce {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px;
+}
+#vip .introduce .text-intro {
+  width: 200px;
+  margin-left: 40px;
+}
+#vip form {
+  padding: 50px;
+  text-align: center;
+  font-size: 14px;
+}
+#vip input {
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+#products .items {
+  display: flex;
+  margin-bottom: 40px;
+  justify-content: space-between;
+}
+#products .items .introduction {
+  padding: 0 50px;
+  flex: 4;
+}
+#products .items .introduction h3 {
+  margin-bottom: 20px;
+}
+#products .items .introduction p {
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+#products .items .img-wrapper {
+  flex: 3;
+  text-align: right;
+  align-self: center;
+}
+#products h1 {
+  margin-bottom: 50px;
+}
+#contact {
+  display: flex;
+  padding: 0 100px;
+  color: #959595;
+  font-size: 14px;
+}
+#contact form {
+  flex: 2;
+  margin-right: 40px;
+}
+#contact form h2 {
+  margin-bottom: 30px;
+  color: #080808;
+}
+#contact form input,
+#contact form textarea {
+  line-height: 30px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#contact .address-wrapper {
+  flex: 1;
+  line-height: 28px;
+}
+#contact .address-wrapper .adress {
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+#contact .address-wrapper h4 {
+  color: #080808;
 }
 footer {
   position: fixed;
@@ -71,7 +207,7 @@ footer {
   background-color: #29a58b;
   color: #fff;
   line-height: 40px;
-  padding: 50px;
+  padding: 30px;
 }
 footer a {
   float: right;
@@ -85,7 +221,7 @@ footer a {
   position: relative;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .clearfix:after {
   content: "";
