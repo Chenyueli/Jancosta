@@ -15,18 +15,18 @@
 				<h2>Jancosta</h2>
 				<div class="nav">
 					<ul>
-						<li class = "active" name = "home">Home</li>
-						<li name = "about">About</li>
-						<li name = "vip">VIP</li>
-						<li name = "products">Products</li>
-						<li name = "contact">Contact</li>
-						<li name = "manager">LogIn</li>
+						<li class="active" name="home">Home</li>
+						<li name="about">About</li>
+						<li name="vip">VIP</li>
+						<li name="products">Products</li>
+						<li name="contact">Contact</li>
+						<li name="login">LogIn</li>
 					</ul>
 				</div>
 			</header>
 
 			<div class="container">
-				<section class = "" id="home">
+				<section class="hidden" id="home">
 					<div class="slide-wrapper">
 						<div class="slider">
 
@@ -67,19 +67,19 @@
 						</div>
 					</div>
 				</section>
-				<section class = "hidden" id="about" >
+				<section class="hidden" id="about">
 					<div class="text-wrapper">
 						<h1>Jancosta<sup>®</sup></h1>
 						<h4>Innovation makes Perfect</h4>
 						<p>Thank you for visiting Jancosta! We are greatly honored to provide quality product as creative and reliable as you!
 							<p>Jancosta has started as a family business (C&D wholesale) since 2008. Through nearly a decade of serving as a bridge between products and consumer, we finally decided to brand our own products online in Aug 2014. Our mission is to offer best quality products and best customer service for our buyers. At Jancosta, we are committed to build a long-term relationship with our customers.</p>
-							<p> If you are interest in knowing more about Jancosta or our products, please move on to explore more on our website or <b class = "contact">contact us</b>.</p>
+							<p> If you are interest in knowing more about Jancosta or our products, please move on to explore more on our website or <b class="contact">contact us</b>.</p>
 							<p>Best,</p>
 							<p>Jancosta Ecommerce, LLC</p>
 					</div>
 					<div class="img-wrapper"><img src="images/about-graphic-1.png" style="width:500px;"></div>
 				</section>
-				<section  class = "hidden" id="vip">
+				<section class="hidden" id="vip">
 					<h2>JANCOSTA VIP MEMBERSHIP</h2>
 					<div class="vip-wrapper">
 						<div class="introduce">
@@ -94,16 +94,15 @@
 						</div>
 						<form>
 							<label>Your Name(required)</label><br/>
-							<input type="text" name = "name"><br />
+							<input type="text" name="name"><br />
 							<label>Your Email(required)</label><br />
-							<input type="text" name = "email"><br />
+							<input type="text" name="email"><br />
 							<button>Sign up</button>
 						</form>
 
 					</div>
-
 				</section>
-				<section class = "hidden" id="products" >
+				<section class="hidden" id="products">
 					<div class="office-products">
 						<h1>Office Products</h1>
 						<div class="items">
@@ -146,17 +145,17 @@
 						</div>
 					</div>
 				</section>
-				<section   class = "hidden" id="contact">
+				<section class="hidden" id="contact">
 					<form>
 						<h2>FEEL FREE TO CONTACT US</h2>
 						<label>Your Name(required)</label><br/>
-						<input type="text" name = "name"><br/>
+						<input type="text" name="name"><br/>
 						<label>Your Email(required)</label><br/>
-						<input type="text" name = "email"><br/>
+						<input type="text" name="email"><br/>
 						<label>Subject</label><br/>
-						<input type="text" name = "subject"><br/>
+						<input type="text" name="subject"><br/>
 						<label>Your Message</label><br/>
-						<textarea rows="5" name = "message"></textarea><br/>
+						<textarea rows="5" name="message"></textarea><br/>
 						<button>SEND</button>
 					</form>
 					<div class="address-wrapper">
@@ -169,8 +168,110 @@
 							<p>support@jancosta.com</p>
 						</div>
 					</div>
-
 				</section>
+				<div class="" id="manager">
+					<div class="side-nav">
+						<ul>
+							<li class="active">Customer List</li>
+							<li>Comment List</li>
+							<li>Add Product</li>
+						</ul>
+					</div>
+					<div class="in-manager">
+						<section class="hidden" id="add-product">
+							<!--<div class="in-add-product">-->
+							<div>
+								<label>Choose a picture</label><br />
+								<div class="img-wrapper"><img src="images/VideoSurveillanceSticker.png"></div>
+							</div>
+							<div class="product-info">
+								<label>Product Name (required) </label><br />
+								<input type="text" /><br />
+								<label>Amazon URL (required)</label><br />
+								<input type="text" placeholder="https://www.amazon.com/dp/B01F1T4ZN2" /><br />
+
+								<label>Type of product</label><br />
+								<select>
+									<option>Office Products</option>
+									<option>Sports Products</option>
+									<option>others</option>
+								</select><br />
+
+								<label>Add properties ( 1-3)</label><br/>
+								<input type="text" placeholder="Durability"><input type="text" placeholder="the Best German UV Print Tech-graphics and wordings will stand 1-3 years" /><button>-</button><br/>
+								<input type="text" placeholder="High Visibility"><input type="text" placeholder="the Best German UV Print Tech-graphics and wordings will stand 1-3 years." /><button>-</button><br/>
+								<input type="text" placeholder="Robust Glue"><input type="text" placeholder="extra thick 3M adhesive offers a firm stick on walls and windows." /><button>-</button><br/>
+								<button>+</button>
+								<!--</div>-->
+
+							</div>
+						</section>
+						<section class="hidden" id="customer-list">
+							<h3>VIP MEMBERSHIP EMAIL LIST</h3>
+							<table border="1">
+
+								<thead>
+									<tr>
+										<th>Register Date</th>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2016-12-10</td>
+										<td>Jane</td>
+										<td>18559024715@163.com</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>2016-12-12</td>
+										<td>Jane</td>
+										<td>18559024715@163.com</td>
+										<td>-</td>
+									</tr>
+								</tbody>
+							</table>
+							<select>
+								<option>One Month</option>
+								<option>Three Monthes</option>
+								<option>One year</option>
+								<option>Three year</option>
+								<option>All</option>
+							</select>
+							<button>DownLoad Excel</button>
+						</section>
+						<section class="" id="comment-list">
+
+							<div class="comment">
+
+								<h3 class="name">chenyueli</h3>
+								<p><b>Date:</b><span>2016-12-6</span></p>
+								<p><b>Email:</b><span class="email">18559024715@163.com</span></p>
+								<p><b>Subject: </b><span class="subject">Deliver Delay</span></p>
+								<p class="message">Why did I not get the penpil after 5 days?</p>
+							</div>
+							
+
+							<div class="comment">
+								<span>2016-12-12</span>
+								<b class="name">chenmaomao</b><span class="email">896671603@qq.com</span>
+								<span class="subject">others</span>
+								<p class="message">I just want to talk to some one!</p>
+							</div>
+							<select>
+								<option>One Month</option>
+								<option>Three Monthes</option>
+								<option>One year</option>
+								<option>Three year</option>
+								<option>All</option>
+							</select>
+						</section>
+
+					</div>
+
+				</div>
 
 			</div>
 
@@ -183,37 +284,46 @@
 				</div>
 			</footer>
 		</div>
+		<div class="hidden" id="login">
+			<div class="in-login">
+				<form>
+					Username <input type="text" name="username" /><br/> Password <input type="password" name="pwd" /><br/>
+					<p class="warning"></p>
+					<button>Log In</button>
+				</form>
+			</div>
+		</div>
 
 		<script src="js/jquery-3.1.1.js"></script>
 		<script src="js/index.js"></script>
-		
+
 		<script>
-						(function() {
-							console.log(document.body.offsetWidth);
-							var moveWidth = document.body.offsetWidth;
-			
-							var curIndex = 0, //当前index
-								imgLen = $(".slider").length; //图片总数
-							// 定时器自动变换2.5秒每次
-							var autoChange = setInterval(function() {
-								if(curIndex < imgLen - 1) {
-									curIndex++;
-								} else {
-									curIndex = 0;
-								}
-								//调用变换处理函数
-								changeTo(curIndex);
-							}, 2500);
-			
-							function changeTo(num) {
-								var goLeft = num * moveWidth;
-								$(".slide-wrapper").animate({
-									left: "-" + goLeft + "px"
-								}, 500);
-								//					$(".infoList").find("li").removeClass("infoOn").eq(num).addClass("infoOn");
-								//					$(".indexList").find("li").removeClass("indexOn").eq(num).addClass("indexOn");
-							}
-						})();
+			(function() {
+				console.log(document.body.offsetWidth);
+				var moveWidth = document.body.offsetWidth;
+
+				var curIndex = 0, //当前index
+					imgLen = $(".slider").length; //图片总数
+				// 定时器自动变换2.5秒每次
+				var autoChange = setInterval(function() {
+					if(curIndex < imgLen - 1) {
+						curIndex++;
+					} else {
+						curIndex = 0;
+					}
+					//调用变换处理函数
+					changeTo(curIndex);
+				}, 2500);
+
+				function changeTo(num) {
+					var goLeft = num * moveWidth;
+					$(".slide-wrapper").animate({
+						left: "-" + goLeft + "px"
+					}, 500);
+					//					$(".infoList").find("li").removeClass("infoOn").eq(num).addClass("infoOn");
+					//					$(".indexList").find("li").removeClass("indexOn").eq(num).addClass("indexOn");
+				}
+			})();
 		</script>
 	</body>
 

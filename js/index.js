@@ -1,19 +1,20 @@
 ;
 (function() {
 	$(document).ready(function() {
-		//		$("#home").removeClass("hidden").fadeOut().fadeIn(500);
+
+//		$(".container").children().not("#home").removeClass("hidden").fadeOut(100);
+//		$("#login").removeClass("hidden").fadeOut(100);
+
 		$("header li").click(function(e) {
-			//			$("#"+$(this).attr("name")).show(1000);
+
+			$("header li").removeClass("active");
+			$(this).addClass("active");
+
 			$item = $("#" + $(this).attr("name"));
-			$("#about,#contact,#home,#products,#vip").removeClass("hidden").fadeOut(100);
-			//			$item.removeClass("hidden");
-			//			$item.fadeIn(500);
+			if($(this).attr("name") !== "login") {
+				$(".container").children().fadeOut(100);
+			}
 			$item.slideDown(800);
-
-			//			$("#"+$("header li").not(this).attr("name")).addClass("hidden");
-			//			$("#"+$(this).attr("name")).show();
-			//			$("#"+$(this).attr("name")).show(1000);
-
 		})
 
 		//   About
@@ -94,7 +95,48 @@
 				$(this).remove();
 			});
 		});
+
+		//login
+		$("#login form").click(function(e) {
+			e.stopPropagation();
+		});
+		$("#login").click(function() {
+			$(this).slideUp(300);
+		});
+		$("#login button").click(function(e) {
+			e.preventDefault();
+			$("#login .warning").remove();
+			var _username = $("#login input[name='username']").val().trim(),
+				_pwd = $("#login input[name='pwd']").val().trim();
+			if(_username == "" || _pwd == "") {
+				$(this).before("<p class = 'warning'>* Enter username and password</p>");
+			} else {
+				var data = {
+					"username": _username,
+					"password": _pwd
+				};
+				//				alert(data.username + data.password);
+				// go to manager pages
+				$("#login").hide();
+				$(".container").children().fadeOut(100);
+				$("#manager").slideDown(800);
+				//				$.post("index.php", data, function(rData) {
+				//					if(rData.errno != 0) {
+				//						alert(rData.errMsg);
+				//					} else {
+				//						$("#login").slideUp(300);
+				//					}
+				//				});
+			}
+
+		});
+		$("#login input").focus(function() {
+			$(this).select();
+			$("#login .warning").fadeOut(500, function() {
+				$(this).remove();
+			});
+		});
 		console.log('success!');
-	})
+	});
 
 })();

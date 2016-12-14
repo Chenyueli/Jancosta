@@ -18,7 +18,7 @@ body {
 }
 header {
     position: fixed;
-    top:0;
+    top: 0;
     width: 100%;
     z-index: 100;
     height: @headHeight;
@@ -39,26 +39,24 @@ header {
         display: inline-block;
         margin-right: 30px;
     }
-    .active {
-        color: #29A58B;
-    }
+}
+.active {
+    color: #29A58B;
 }
 //--------------------------------container--------------------------
 .container {
     //  padding: 50px;
-    margin-top:@headHeight;
-    
+    margin-top: @headHeight;
 }
 #about,
 #vip,
 #products,
 #contact {
-//  padding: 50px;
-    .tb;
-//  padding-top:@headHeight;
+    //  padding: 50px;
+    .tb; //  padding-top:@headHeight;
 }
 #home {
-//  margin-top:@headHeight;
+    //  margin-top:@headHeight;
     .slide-wrapper {
         position: relative;
         width: 200%; //      padding:50px 0;
@@ -250,6 +248,103 @@ footer {
 }
 .in-footer {
     position: relative; //  .tb;
+}
+//--------------------------------login--------------------------
+#login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    background-color: #787878;
+    * {
+        .tb;
+    }
+    .in-login {
+        .tb;
+        width: 500px;
+        margin: 200px auto;
+        padding: 80px 50px;
+        background-color: #080808;
+    }
+    form {
+        text-align: center;
+        color: #fff;
+    }
+    input,
+     {
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+}
+//--------------------------------manager--------------------------
+@sideWidt: 240px;
+#manager {
+    .side-nav {
+        width: @sideWidt;
+        height: 800px;
+        float: left;
+        background-color: rgba(47, 47, 47, 1);
+        color: #fff;
+    }
+    ul {
+        list-style-type: none;
+        padding: 40px;
+        line-height: 90px;
+        font-size: 20px;
+    }
+}
+.in-manager {
+    margin-left: @sideWidt;
+    padding: 60px;
+}
+#add-product {
+    display: flex;
+    .product-info {
+        margin-left: 50px;
+    }
+}
+#customer-list {
+    //  *{
+    //      .tb;
+    //  }
+    h3 {
+        text-align: center;
+    }
+    table {
+        width: 100%;
+        text-align: center;
+        margin: 20px auto;
+        line-height: 30px;
+    }
+    legend {
+        text-align: center;
+    }
+    button {
+        float: right;
+    }
+}
+
+#comment-list{
+    .comment{
+        margin-bottom: 20px;
+        line-height: 30px;;
+    }
+    h3{
+        margin-bottom: 10px;
+    }
+    p{
+        display: flex;
+    }
+    b{
+        flex:1
+    }
+    span{
+        flex:8;
+    }
+    
 }
 .hidden {
     display: none !important;
