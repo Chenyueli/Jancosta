@@ -172,38 +172,50 @@
 				<div class="" id="manager">
 					<div class="side-nav">
 						<ul>
-							<li class="active" name = "customer-list">Customer List</li>
-							<li name = "comment-list">Comment List</li>
-							<li name = "add-product">Add Product</li>
+							<li class="active" name="customer-list">Customer List</li>
+							<li name="comment-list">Comment List</li>
+							<li name="add-product">Add Product</li>
 						</ul>
 					</div>
 					<div class="in-manager">
 						<section class="" id="add-product">
-							<!--<div class="in-add-product">-->
+
 							<div>
-								<label>Choose a picture</label><br />
-								<div class="img-wrapper"><img src="images/VideoSurveillanceSticker.png"></div>
+								<div class="img-panel" title="product-image">
+									<div class="show-img-panel">
+
+										<!--<img src="images/VideoSurveillanceSticker.png">-->
+										<!--<img width='80px' height='80px' src="img/teacher1.png" />-->
+									</div>
+									<div class="add-file-wrapper">
+										<input type="file" name="file" onchange="validateImg(this)" />
+										<i class="fa fa-plus" aria-hidden="true"></i>
+									</div>
+								</div>
+								<p>* Choose a picture(required)</p>
 							</div>
 							<div class="product-info">
-								<label>Product Name (required) </label><br />
-								<input type="text" /><br />
-								<label>Amazon URL (required)</label><br />
-								<input type="text" placeholder="https://www.amazon.com/dp/B01F1T4ZN2" /><br />
+								<form>
+									<label>* Product Name</label>
+									<input name = "name" type="text" class = "required" /><br />
+									<label>* Amazon URL</label>
+									<input name = "amazon-url" class = "required" type="text" placeholder="https://www.amazon.com/dp/B01F1T4ZN2" /><br />
 
-								<label>Type of product</label><br />
-								<select>
-									<option>Office Products</option>
-									<option>Sports Products</option>
-									<option>others</option>
-								</select><br />
-
-								<label>Add properties ( 1-3)</label><br/>
-								<input type="text" placeholder="Durability"><input type="text" placeholder="the Best German UV Print Tech-graphics and wordings will stand 1-3 years" /><button>-</button><br/>
-								<input type="text" placeholder="High Visibility"><input type="text" placeholder="the Best German UV Print Tech-graphics and wordings will stand 1-3 years." /><button>-</button><br/>
-								<input type="text" placeholder="Robust Glue"><input type="text" placeholder="extra thick 3M adhesive offers a firm stick on walls and windows." /><button>-</button><br/>
-								<button>+</button>
-								<!--</div>-->
-
+									<label>* Type of product:</label>
+									<select class = "type">
+										<option selected="selected">Office Products</option>
+										<option>Sports Products</option>
+										<option>others</option>
+									</select>
+									<div class = "properties">
+										<label>*Add 1-3 properties:</label><br /> *
+										<p><input  name = "proper" class = "required" type="text" placeholder="Durability"><input name = "description"type="text" placeholder="the Best German UV Print Tech-graphics and wordings will stand 1-3 years" /><button>-</button></p>
+										<p><input name = "proper" type="text" placeholder="High Visibility"><input name = "description"type="text" placeholder="the Best German UV Print Tech-graphics and wordings will stand 1-3 years." /><button>-</button></p>
+										<p><input name = "proper "type="text" placeholder="Robust Glue"><input name = "description" type="text" placeholder="extra thick 3M adhesive offers a firm stick on walls and windows." /><button>-</button></p>
+									</div>
+									<button>Submit</button>
+									<!--</div>-->
+								</form>
 							</div>
 						</section>
 						<section class="" id="customer-list">
@@ -222,13 +234,13 @@
 										<td>2016-12-10</td>
 										<td>Jane</td>
 										<td>18559024715@163.com</td>
-										<td class = "delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+										<td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 									</tr>
 									<tr>
 										<td>2016-12-12</td>
 										<td>Jane</td>
 										<td>18559024715@163.com</td>
-										<td class = "delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+										<td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 									</tr>
 								</tbody>
 							</table>
@@ -239,40 +251,42 @@
 								<option>Three year</option>
 								<option>All</option>
 							</select>
-							<div class=  "dowload-wrapper">
-								<input type = "file" name = "excel-url" />
+							<div class="dowload-wrapper">
+								<input type="file" name="excel-url" />
 								<button>DownLoad Excel</button>
 							</div>
-							
+
 						</section>
 						<section class="" id="comment-list">
 							<select>
-								<option>One Month</option>
+								<option selected="true">One Month</option>
 								<option>Three Monthes</option>
 								<option>One year</option>
 								<option>Three year</option>
 								<option>All</option>
 							</select>
-							<button class = "delete-all">Delete All</button>
+							<button class="delete-all">Delete All</button>
 							<div class="comment">
+								<p class="comment-id hidden">1</p>
 								<p><b>Name:</b><span title="name">chenyueli</span></p>
 								<p><b>Date:</b><span title="date">2016-12-6</span></p>
 								<p><b>Email:</b><span title="email">18559024715@163.com</span></p>
 								<p><b>Subject: </b><span title="subject">Deliver Delay</span></p>
 								<p><b>Message:</b><span title="message">Why did I not get the penpil after 5 days?</span></p>
-								<button class= "reply">Reply</button>
-								<button class= "delete">Delete</button>
+								<button class="reply">Reply</button>
+								<button class="delete">Delete</button>
 
 							</div>
 
 							<div class="comment">
+								<p class="comment-id hidden">2</p>
 								<p><b>Name:</b><span title="name">chenmaomao</span></p>
 								<p><b>Date:</b><span title="date">2016-12-12</span></p>
 								<p><b>Email:</b><span title="email">896671603@qq.com</span></p>
 								<p><b>Subject: </b><span title="subject">others</span></p>
 								<p><b>Message:</b><span title="message">I just want to talk to some one!</span></p>
-								<button class = "reply">Reply</button>
-								<button class = "delete">Delete</button>
+								<button class="reply">Reply</button>
+								<button class="delete">Delete</button>
 							</div>
 						</section>
 
@@ -282,7 +296,7 @@
 
 			</div>
 
-			<footer class="hidden">
+			<footer class="">
 				<div class="in-footer">
 					<h2>Join Wundermax Vip Club</h2>
 					<span>Sign Up Wundermax VIP Exclusive Program, get discounts and win a $50 Amazon Gift Card!
@@ -294,8 +308,7 @@
 		<div class="hidden" id="login">
 			<div class="in-login">
 				<form>
-					Username <input type="text" name="username" value="chen" /><br/> 
-					Password <input type="password" name="pwd" value="1" /><br/>
+					Username <input type="text" name="username" value="chen" /><br/> Password <input type="password" name="pwd" value="1" /><br/>
 					<p class="warning"></p>
 					<button>Log In</button>
 				</form>
