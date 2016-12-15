@@ -172,13 +172,13 @@
 				<div class="" id="manager">
 					<div class="side-nav">
 						<ul>
-							<li class="active">Customer List</li>
-							<li>Comment List</li>
-							<li>Add Product</li>
+							<li class="active" name = "customer-list">Customer List</li>
+							<li name = "comment-list">Comment List</li>
+							<li name = "add-product">Add Product</li>
 						</ul>
 					</div>
 					<div class="in-manager">
-						<section class="hidden" id="add-product">
+						<section class="" id="add-product">
 							<!--<div class="in-add-product">-->
 							<div>
 								<label>Choose a picture</label><br />
@@ -206,10 +206,9 @@
 
 							</div>
 						</section>
-						<section class="hidden" id="customer-list">
+						<section class="" id="customer-list">
 							<h3>VIP MEMBERSHIP EMAIL LIST</h3>
 							<table border="1">
-
 								<thead>
 									<tr>
 										<th>Register Date</th>
@@ -223,43 +222,30 @@
 										<td>2016-12-10</td>
 										<td>Jane</td>
 										<td>18559024715@163.com</td>
-										<td>-</td>
+										<td class = "delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 									</tr>
 									<tr>
 										<td>2016-12-12</td>
 										<td>Jane</td>
 										<td>18559024715@163.com</td>
-										<td>-</td>
+										<td class = "delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 									</tr>
 								</tbody>
 							</table>
 							<select>
-								<option>One Month</option>
+								<option selected="true">One Month</option>
 								<option>Three Monthes</option>
 								<option>One year</option>
 								<option>Three year</option>
 								<option>All</option>
 							</select>
-							<button>DownLoad Excel</button>
-						</section>
-						<section class="" id="comment-list">
-
-							<div class="comment">
-
-								<h3 class="name">chenyueli</h3>
-								<p><b>Date:</b><span>2016-12-6</span></p>
-								<p><b>Email:</b><span class="email">18559024715@163.com</span></p>
-								<p><b>Subject: </b><span class="subject">Deliver Delay</span></p>
-								<p class="message">Why did I not get the penpil after 5 days?</p>
+							<div class=  "dowload-wrapper">
+								<input type = "file" name = "excel-url" />
+								<button>DownLoad Excel</button>
 							</div>
 							
-
-							<div class="comment">
-								<span>2016-12-12</span>
-								<b class="name">chenmaomao</b><span class="email">896671603@qq.com</span>
-								<span class="subject">others</span>
-								<p class="message">I just want to talk to some one!</p>
-							</div>
+						</section>
+						<section class="" id="comment-list">
 							<select>
 								<option>One Month</option>
 								<option>Three Monthes</option>
@@ -267,6 +253,27 @@
 								<option>Three year</option>
 								<option>All</option>
 							</select>
+							<button class = "delete-all">Delete All</button>
+							<div class="comment">
+								<p><b>Name:</b><span title="name">chenyueli</span></p>
+								<p><b>Date:</b><span title="date">2016-12-6</span></p>
+								<p><b>Email:</b><span title="email">18559024715@163.com</span></p>
+								<p><b>Subject: </b><span title="subject">Deliver Delay</span></p>
+								<p><b>Message:</b><span title="message">Why did I not get the penpil after 5 days?</span></p>
+								<button class= "reply">Reply</button>
+								<button class= "delete">Delete</button>
+
+							</div>
+
+							<div class="comment">
+								<p><b>Name:</b><span title="name">chenmaomao</span></p>
+								<p><b>Date:</b><span title="date">2016-12-12</span></p>
+								<p><b>Email:</b><span title="email">896671603@qq.com</span></p>
+								<p><b>Subject: </b><span title="subject">others</span></p>
+								<p><b>Message:</b><span title="message">I just want to talk to some one!</span></p>
+								<button class = "reply">Reply</button>
+								<button class = "delete">Delete</button>
+							</div>
 						</section>
 
 					</div>
@@ -287,7 +294,8 @@
 		<div class="hidden" id="login">
 			<div class="in-login">
 				<form>
-					Username <input type="text" name="username" /><br/> Password <input type="password" name="pwd" /><br/>
+					Username <input type="text" name="username" value="chen" /><br/> 
+					Password <input type="password" name="pwd" value="1" /><br/>
 					<p class="warning"></p>
 					<button>Log In</button>
 				</form>

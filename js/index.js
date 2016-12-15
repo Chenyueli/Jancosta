@@ -2,8 +2,10 @@
 (function() {
 	$(document).ready(function() {
 
-//		$(".container").children().not("#home").removeClass("hidden").fadeOut(100);
-//		$("#login").removeClass("hidden").fadeOut(100);
+//				$(".container").children().not("#home").removeClass("hidden").fadeOut(100);
+//				$("#login").removeClass("hidden").fadeOut(100);
+//				$("#home").removeClass("hidden");
+				$("#manager").show();
 
 		$("header li").click(function(e) {
 
@@ -135,6 +137,41 @@
 			$("#login .warning").fadeOut(500, function() {
 				$(this).remove();
 			});
+		});
+
+		//manager
+
+		$("#add-product,#comment-list").hide();
+		$("#manager .side-nav li").click(function() {
+			$(".in-manager").children().hide();
+			$("#" + $(this).attr("name")).show(500);
+			
+			$(".side-nav li").removeClass("active");
+			$(this).addClass("active");
+		});
+		
+		$("#customer-list").click(function(e){
+			var $target = $(e.target);
+			if($target.is(".delete")){
+				if(confirm("Delete this customer information?")){
+					$target.parent().remove();
+				}
+			}else if ($target.is("button")){
+				e.preventDefault();
+				console.log($("#customer-list option:selected").text());
+				var data = {
+					"require":"costomerList",
+					"data": $("#customer-list option:selected").text(),
+				}
+//				$.post("index.php",data,function(rData){
+//					if(rData.errno !=0){
+//						alert(rData.errMsg);
+//					}else{
+//						//Download excel Successfully;
+//					}
+//					
+//				});
+			}
 		});
 		console.log('success!');
 	});
