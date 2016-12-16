@@ -7,6 +7,7 @@
 @headHeight: 120px;
 @themeColor: #29A58B;
 @textColor: #959595;
+@cPadding:50px;
 .tb {
     border: 1px solid red;
 }
@@ -45,7 +46,7 @@ header {
 }
 //--------------------------------container--------------------------
 .container {
-    //  padding: 50px;
+//      padding: 50px;
     margin-top: @headHeight;
 }
 #about,
@@ -130,6 +131,9 @@ header {
     //  *{
     //      .tb;
     //  }
+    .in-vip{
+        padding:@cPadding;
+    }
     color: @textColor;
     h2 {
         text-align: center; //      margin-bottom: 50px;
@@ -164,6 +168,9 @@ header {
     //  * {
     //      .tb;
     //  }
+    .in-products{
+        padding:@cPadding;
+    }
     .items {
         display: flex;
         margin-bottom: 40px; //      align-items: center;
@@ -193,8 +200,12 @@ header {
     //  * {
     //      .tb;
     //  }
-    display: flex;
-    padding: 0 100px;
+    
+    .in-contact{
+        padding:@cPadding;
+        display: flex;
+//      padding: 0 100px;
+    }
     form {
         flex: 2;
         margin-right: 40px; //      display: inline-block;
@@ -412,6 +423,24 @@ footer {
         }
     }
     
+}
+#user{
+    h3{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    table {
+        width: 100%;
+        text-align: center;
+        margin: 20px auto;
+        line-height: 30px;
+    }
+    .update,.delete-all{
+        margin-right: 10px;
+    }
+    p{
+        
+    }
 }
 .hidden {
     display: none !important;

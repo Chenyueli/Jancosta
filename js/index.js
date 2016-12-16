@@ -19,7 +19,7 @@ function validateImg(fileElement) {
 		{
 			//						path = .getAsDataURL();
 			path = window.URL.createObjectURL(fileElement.files[0]);
-			fileElement.parentElement.previousElementSibling.innerHTML = "<img width='300px' height='300px' src='" + path + "'/>";
+
 			fileElement.parentElement.style.opacity = 0;
 			console.log(path);
 		}
@@ -167,7 +167,8 @@ function validateImg(fileElement) {
 
 		//manager
 
-		$("#add-product,#comment-list").hide();
+		$("#in-manager").children().hide();
+		$("#customer-list").show();
 		$("#manager .side-nav li").click(function() {
 			$(".in-manager").children().hide();
 			$("#" + $(this).attr("name")).show(500);
@@ -181,13 +182,14 @@ function validateImg(fileElement) {
 			if($target.is(".delete")) {
 				if(confirm("Delete this customer information?")) {
 					$target.parent().remove();
+
 				}
 			} else if($target.is("button")) {
 				e.preventDefault();
 				console.log($("#customer-list option:selected").text());
 				var data = {
-						"require": "costomerList",
-						"data": $("#customer-list option:selected").text(),
+						"operation": "delCsmInfos",
+						"period": $("#customer-list option:selected").text(),
 					}
 					//				$.post("index.php",data,function(rData){
 					//					if(rData.errno !=0){
@@ -232,6 +234,64 @@ function validateImg(fileElement) {
 				}
 			}
 		});
+		//检查图片，格式正确返回 图像URL 否则返回false
+		function getImgURL(fileElement) {
+			var filextension = fileElement.value.substring(fileElement.value.lastIndexOf("."), fileElement.value.length);
+			filextension = filextension.toLowerCase();
+			if(filextension != '.jpg') {
+				alert("对不起，系统仅支持.jpg格式图片!");
+				return false;
+			} else {
+				var path;
+				path = window.URL.createObjectURL(fileElement.files[0]);
+				console.log(path);
+				return path;
+			}
+		};
+		$("#add-product #add-img").change(function(e) {
+			//			alert(this.id);
+			var ID = this.id;
+			var fileElement = this;
+			var path = getImgURL(fileElement);
+
+			if(path != false) {
+				fileElement.parentElement.previousElementSibling.innerHTML = "<img width='300px' height='300px' src='" + path + "'/>";
+				fileElement.parentElement.style.opacity = 0;
+
+				var image = "";
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					image = e.target.result;
+					alert(image);
+					var data = {
+						"data": image
+					};
+					//				data[this.id] = this.id;
+
+					//				alert(data);
+					//						var data = {
+					//							"idCard": path,
+					//							"stuCard": path,
+					//							"description": "this is img"
+					//						};
+					$.post("../user/picture", data, function(data) {
+						if(data.errno != 0) {
+							alert(data.errmsg);
+						} else {
+							//							alert(ID);
+							returnName[ID] = data.url;
+							//							returnName[this.id] = data.url;
+							//							returnName[this.id] = data.url;
+							//							alert(returnName[this.id]);
+
+							//							alert(returnName.idCard);
+							//							alert(data.errmsg);
+						}
+					}, "json");
+				}
+				reader.readAsDataURL(fileElement.files[0]);
+			}
+		});
 
 		$("#add-product button").click(function(e) {
 			e.preventDefault();
@@ -257,20 +317,98 @@ function validateImg(fileElement) {
 			if(_flag) {
 				var _name = $("#add-product input[name='name']").val().trim(),
 					_amazonUrl = $("#add-product input[name='amazon-url']").val().trim(),
-					_type = $("#add-product .type option:selected").text().trim();
+					_category = $("#add-product .type option:selected").text().trim();
 				var _properties = [];
-				for(var i=0;i<$("#add-product .properties p").length;i++){
-					console.log(readProperties(i));	
+				for(var i = 0; i < $("#add-product .properties p").length; i++) {
+					console.log(readProperties(i));
 					_properties.push(readProperties(i))
 				}
 				var _data = {
 					"name": _name,
+					"picture": "a",
 					"amazonUrl": _amazonUrl,
-					"type": _type,
+					"category": _category,
 					"properties": _properties,
+					"data": getDate()
+
 				}
 			}
-		})
+		});
+
+		function getDate(strSeparator) {
+			if(!strSeparator) {
+				var strSeparator = "-";
+			};
+			var mydate = new Date();
+			var str = "" + mydate.getFullYear() + strSeparator;
+			str += (mydate.getMonth() + 1) + strSeparator;
+			str += mydate.getDate();
+			return str;
+		};
+
+		$("#user").click(function(e) {
+			var $this = $(e.target);
+			if($this.is(".delete")) {
+				$this.parent().parent().remove();
+			} else if($this.is(".update")) {
+				var _userId = $this.parent().siblings().filter(".userId").text();
+				var _role = $this.parent().parent().find("option:selected").text();
+				alert(_userId + _role);
+				var data = {
+					"userId": _userId,
+					"role": _role
+				};
+				//				$.post("index.php",data,function(rData){
+				//					if(rData.errno!=0){
+				//						alert(rData.errmsg);
+				//					}else{
+				//						
+				//					}
+				//				});
+			} else if($this.is(".add")) {
+				var newHtml = '<tr>' +
+					'<td><input type="checkbox" /></td><td class="userId">none</td><td><input type = "text" value = "Chenyueli" size="8"/></td>' +
+					'<td><input type = "text" value = "9208" size = "8"/></td>' +
+					'<td><select><option selected="true">Commen Manager</option><option>Supper Manager</option></select></td>' +
+					'<td><button class="update">Update</button><button class="delete">Delete</button></td>' +
+					'</tr>';
+				$("#user tbody").append(newHtml);
+			} else if($this.is(".deletes")) {
+				var delIdList = [];
+				var delDomList = [];
+				$("#user tbody :checkbox").each(function(index, domELe) {
+					if(this.checked) {
+						//delete DOM element;
+						$(this).parent().parent().remove();
+						//delete user from database
+						delIdList.push($(this).parent().siblings().filter(".userId").text().trim());
+					}
+				});
+				if(delIdList != "") {
+					var data = {
+							"delIdList": delIdList
+						}
+						//					$.post("index.php",data,function(rData){
+						//						if(rData.errno !=  0){
+						//							alert(rData.errmsg);
+						//						}else{
+						//							console.log("操作成功")
+						//						}
+						//					})
+				}
+
+			}
+		});
+
+		$("#user .select-all").change(function(e) {
+			if(this.checked) {
+				$("#user tbody :checkbox").attr("checked", true);
+			} else {
+				$("#user :checkbox").attr("checked", false);
+			}
+		});
+
+		//		alert(getDate("."));
 		console.log('success!');
 	});
 

@@ -116,6 +116,9 @@ header li {
 #vip {
   color: #959595;
 }
+#vip .in-vip {
+  padding: 50px;
+}
 #vip h2 {
   text-align: center;
 }
@@ -144,6 +147,9 @@ header li {
   margin-bottom: 30px;
   margin-top: 10px;
 }
+#products .in-products {
+  padding: 50px;
+}
 #products .items {
   display: flex;
   margin-bottom: 40px;
@@ -169,10 +175,12 @@ header li {
   margin-bottom: 50px;
 }
 #contact {
-  display: flex;
-  padding: 0 100px;
   color: #959595;
   font-size: 14px;
+}
+#contact .in-contact {
+  padding: 50px;
+  display: flex;
 }
 #contact form {
   flex: 2;
@@ -362,6 +370,20 @@ footer a {
 }
 #add-product .product-info select {
   margin: 20px 0 0 10;
+}
+#user h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#user table {
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+  line-height: 30px;
+}
+#user .update,
+#user .delete-all {
+  margin-right: 10px;
 }
 .hidden {
   display: none !important;
